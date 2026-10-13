@@ -1,0 +1,96 @@
+:root {
+  --bg: #fafaf8;
+  --text: #1f2328;
+  --muted: #59636e;
+  --accent: #1f5f8b;
+  --border: #e3e3df;
+  --maxw: 760px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a;
+    --text: #e6e8ea;
+    --muted: #9aa4ad;
+    --accent: #6fb3e0;
+    --border: #2a2f34;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+header.site {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+
+header.site .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand { font-weight: 600; color: var(--text); }
+
+nav a { margin-left: 18px; color: var(--muted); font-size: 15px; }
+nav a.active, nav a:hover { color: var(--text); text-decoration: none; }
+
+main { padding: 40px 0 60px; }
+
+h1 { font-size: 1.9rem; margin: 0 0 4px; line-height: 1.25; }
+h2 { font-size: 1.2rem; margin: 36px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.02rem; margin: 18px 0 4px; }
+
+.tagline { color: var(--muted); margin: 0 0 20px; }
+
+.intro { display: flex; gap: 28px; align-items: flex-start; }
+.intro img {
+  width: 160px; height: 160px; object-fit: cover;
+  border-radius: 50%; border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.links a { margin-right: 14px; font-size: 15px; }
+
+ul { padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.muted { color: var(--muted); }
+
+.tag {
+  display: inline-block; font-size: 13px; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 2px 10px; margin: 0 6px 6px 0;
+}
+
+.pub { margin-bottom: 16px; }
+.pub .meta { color: var(--muted); font-size: 15px; }
+
+footer { border-top: 1px solid var(--border); padding: 20px 0; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 600px) {
+  .intro { flex-direction: column; }
+  nav a { margin-left: 0; margin-right: 14px; }
+}
+
+.pubs { list-style: none; padding-left: 0; }
+.pubs li { margin-bottom: 12px; font-size: 15.5px; }
+.entry { margin-bottom: 14px; }
+.entry .when { color: var(--muted); font-size: 15px; }
+.small { font-size: 15px; }
